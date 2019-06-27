@@ -1,5 +1,6 @@
 //pound sign something is looking for the id something
 //<input type="text" id="name" name="user_name">
+//https://api.jquery.com/focus/
 $("#name").focus();
 
 //<input type="text" id="other-title" name="job_role_other" placeholder="Your Job Role">
