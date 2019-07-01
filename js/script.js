@@ -1,17 +1,16 @@
-//Place the document in a ready state to be manipulated safely.  https://learn.jquery.com/using-jquery-core/document-ready/
-  
-/*Set focus on the name ID
-      - pound sign is looking for the id: <input type="text" id="name" name="user_name">
-          https://api.jquery.com/focus/
-  */
-  /* On the drop down menu Job Role add an other role
-      - Add input in index.html adding text to the placeholder
-        <input type="text" id="other-title" name="job_role_other" placeholder="Your Job Role">
-  */
+//DOCUMENT READY
+  //Place the document in a ready state to be manipulated safely.  https://learn.jquery.com/using-jquery-core/document-ready/
+$(document).ready(function () {  
 
-$(document).ready(function () {                  
-
-    $("#name").focus();                         
+  // FOCUS
+    //Set focus on the name ID:  https://api.jquery.com/focus/  
+      // pound sign is looking for the id: <input type="text" id="name" name="user_name">
+    $("#name").focus();
+    
+  // OTHER 
+    // On the drop down menu Job Role add another role, name it Other
+       // IMPORTANT to Add input in index.html adding text to the placeholder
+       // <input type="text" id="other-title" name="job_role_other" placeholder="Your Job Role">
     $('#other-title').hide();                   
     $('#title').on('change', (e) => {
       if ($(e.target).val() == 'other') {       
@@ -21,28 +20,28 @@ $(document).ready(function () {
         }
     });
 
-  /* T-SHIRT section starts here
-      //Hide the  “Select Theme”  `option` element in the “Design” menu
-      //<select id="design" name="user_design">*/
-      $("#design").find('option').first().hide();
+  // T-SHIRT SECTION
+      // Hide the  “Select Theme”  `option` element in the “Design” menu
+      // <select id="design" name="user_design">
+    $("#design").find('option').first().hide();
 
       //Update the “Color” field to read “Please select a T-shirt theme”.
       //<option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>
-      $("#color option:first").before('<option selected="selected" value="none">Please select a T-shirt theme</option>');
+    $("#color option:first").before('<option selected="selected" value="none">Please select a T-shirt theme</option>');
 
       //Hide the colors in the “Color” drop down menu.
       //<select id="color">
-
-      $("#color").find('option:not(:eq(0))').hide();
+    $("#color").find('option:not(:eq(0))').hide();
 
       //event listener if show hide update color
-      $('#design').on('change', function(){
+    $('#design').on('change', function(){
+    
       //T shirt section extra credit
-          $('#color').show();
-          $('#colors-js-puns label').show();
+        $('#color').show();
+        $('#colors-js-puns label').show();
 
-          let choice = $('#design option:selected').attr("value");
-          if (choice == 'js puns') {
+        let choice = $('#design option:selected').attr("value");
+        if (choice == 'js puns') {
               $('#color option[value="none"]').remove();
               $('#color option:contains("JS Puns")').show();
               $('#color option:contains("JS shirt only")').first().attr('selected', false);
@@ -61,12 +60,12 @@ $(document).ready(function () {
           }
       });
 
-  //T shirt section extra credit
+    //T-Shirt SECTION EXTRA CREDIT
       $('#color').hide();
       $('#colors-js-puns label').hide();
 
-  //Creating an element to display the total activity cost
-      //let activityCostDiv = document.createElement("div");  // Create with DOM https://www.w3schools.com/jquery/jquery_dom_add.asp
+   //Creating an element to display the total activity cost
+        //let activityCostDiv = document.createElement("div");  // Create with DOM https://www.w3schools.com/jquery/jquery_dom_add.asp
       let activityCostDiv = $("<div></div>");
       $(".activities").append(activityCostDiv);      // Append the new element
       let activityCostAmt = 0.0;
@@ -388,7 +387,6 @@ $(document).ready(function () {
       showInputValidationError("#cc-num", "err-cc-num", "Credit card number must be between 13 and 16 digits.", 0);
       return false;
     }
-
   }
 
   const validationCreditCardZipCode = () => {
@@ -418,7 +416,6 @@ $(document).ready(function () {
       showInputValidationError("#zip", "err-zip", "Credit card ZIP code must be exactly 5 digits.", 0);
       return false;
     }
-
   }
 
   const validationCreditCardCVV = () => {
