@@ -40,25 +40,21 @@ $(document).ready(function(){
 
 /*//T-SHIRT Section
     //The T-Shirt Section selects the available colors by theme
-        //$("#design").find('option').first().hide();
-            //Hide the “Select Theme” `option` element in the “Design” menu
-            //Reference the index.html for the id <select id="design" name="user_design">
-            //Search by id 'design', then find the design options, then the first item is hidden 
-        //$("#color option:first").before('<option selected="selected" value="none">Please select a T-shirt theme</option>');
-            // https://stackoverflow.com/questions/1414276/how-to-make-the-first-option-of-select-selected-with-jquery?rq=1
-            //Add a new option to the top of the option list
-            //This will make the selected option read “Please select a T-shirt theme”.
-        // $('#color').find('option:not(:eq(0))').hide();
-            //Hide the options in the “Color” drop down menu excepting the first.
-            //('option:not(:eq(0))') - we are looking for all the elements with the name option but not at index 0 (eq(0))
-        //$('#design').on('change', function(){
-            //We start the event listener
-                //
-                //<select id="color"> */
-
-  $('#design').find('option').first().hide();     
+ */
+  //Hide the “Select Theme” `option` element in the “Design” menu
+  //Reference the index.html for the id <select id="design" name="user_design">
+  //Search by id 'design', then find the design options, then the first item is hidden 
+  $('#design').find('option').first().hide();  
+  
+  //Add a new option to the top of the option list (https://stackoverflow.com/questions/1414276/how-to-make-the-first-option-of-select-selected-with-jquery?rq=1)
+  //This will make the selected option read “Please select a T-shirt theme”.
   $('#color option:first').before('<option selected="selected" value="none">Please select a T-shirt theme</option>');
+  
+  //Hide the options in the “Color” drop down menu excepting the first.
+  //('option:not(:eq(0))') - we are looking for all the elements with the name option but not at index 0 (eq(0))
   $('#color').find('option:not(:eq(0))').hide();
+  
+  //We start the event listener
   $('#design').on('change', function(){
       
     //T-Shirt section extra credit
@@ -104,9 +100,9 @@ $(document).ready(function(){
     $('#colors-js-puns label').hide(); 
 
 //ACTIVITY Section
-    //Generate a new div element and append to the element with the activities class
-    // Create with DOM https://www.w3schools.com/jquery/jquery_dom_add.asp
+  // Create with DOM https://www.w3schools.com/jquery/jquery_dom_add.asp
 
+  //Generate a new div element and append to the element with the activities class
   const $activityCostDiv = $("<div></div>");
   $(".activities").append($activityCostDiv);      //Append the new element
   let activityCostAmt = 0.0;                     //Start the activityCostAmt at 0
@@ -165,16 +161,7 @@ $(document).ready(function(){
        }
   });
 
-
-  
-  //Disabling conflicting activities part 2
-    //
-
-
-
-//Payment Section
-  //
-//Form Validation and Validation Messages
+  //Form Validation and Validation Messages
   //
   const getTimestampStr = (chkBox) => {
     const chkBoxStr = chkBox.parent().text();
