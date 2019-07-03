@@ -411,7 +411,8 @@ const isTimestampConflicting = (leftTimestamp, rightTimestamp) => {
     }
   }
   //Form validation for Credit Card error message
-    //Regex (https://www.computerhope.com/unix/regex-quickref.htm) (Positional metacharacters (^ = start of string or line, $ = end of string, or end of line
+    //Regex (https://www.computerhope.com/unix/regex-quickref.htm) 
+    //(Positional metacharacters (^ = start of string or line, $ = end of string, or end of line
     //Use the regex to define the text https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
   const validationCreditCardNumber = () => {
